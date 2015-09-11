@@ -1,0 +1,11 @@
+h1.text-center Products in catalog
+hr/
+.row
+  .col-sm-12 ng-hide="products.length"  No products in catalog
+  .well.col-sm-3 ng-repeat=("product in products") 
+    a ui-sref=("show({itemId: product.id})") {{product.name}}
+    a.btn.btn-danger.pull-right ng-click="deleteProduct($index)"  Remove
+    a.btn.btn-warning.pull-right ui-sref=("edit({itemId: product.id})")  Edit
+p
+  | Create new product
+  a.btn.btn-success ui-sref="new"  New

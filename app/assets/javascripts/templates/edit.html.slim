@@ -1,0 +1,32 @@
+.well
+  h3.text-center Update Product
+  form name="productForm" ng-submit=("productForm.$valid && editProduct()") novalidate="" 
+    .row
+      .text-center.panel.panel-primary style=("width: 45%; margin: 0 auto;") 
+        .panel.panel-heading
+          | Product-info:
+        .panel.panel-body
+          p Product name:  {{product.name}}
+          p Product description:  {{product.description}}
+          p Product price:  {{product.price}} 
+      .col-sm-3.col-sm-offset-3
+        input#name.form-control name="name" ng-model="newProduct.name" placeholder=("Product Name") required="" type="text" /
+        div ng-show=("productForm.$submitted || productForm.name.$touched") style="color:red;" 
+          span ng-show="productForm.name.$error.required"  Name is required
+      .col-sm-3
+        input#description.form-control name="description" ng-model="newProduct.description" placeholder=("Product description") required="" type="text" /
+        div ng-show=("productForm.$submitted || productForm.description.$touched") style="color:red;" 
+          span ng-show="productForm.description.$error.required"  Description is required
+    .row
+      .col-sm-6.col-sm-offset-3
+        br/
+        input#price.form-control name="price" ng-model="newProduct.price" placeholder=("Product price") required="" type="number" /
+        div ng-show=("productForm.$submitted || productForm.price.$touched") style="color:red;" 
+          span ng-show="productForm.price.$error.required"  Price is required
+          span ng-show="productForm.price.$error.number" 
+            | Not valid number!
+    .row
+      .col-sm-6.col-sm-offset-3.text-center
+        br/
+        input.btn.btn-primary type="Submit" value=("Update Product") /
+  a.btn.btn-info ui-sref="index"  Back

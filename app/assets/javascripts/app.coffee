@@ -87,7 +87,7 @@ catalog.controller 'ProductsController', [
 catalog.config [
   '$stateProvider'
   '$urlRouterProvider'
-  'flashProvider'
+  'flashProvider',
   ($stateProvider, $urlRouterProvider, flashProvider) ->
     flashProvider.errorClassnames.push 'alert-danger'
     flashProvider.warnClassnames.push 'alert-warning'
