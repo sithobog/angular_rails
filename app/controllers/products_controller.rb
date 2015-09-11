@@ -15,6 +15,11 @@ class ProductsController < ApplicationController
     respond_with Product.destroy(params[:id])
   end
 
+  def update
+    @product = Product.find(params[:id])
+    respond_with @product.update_attributes(product_params)
+  end
+
   def show
     respond_with Product.find(params[:id])
   end

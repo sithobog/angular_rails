@@ -36,6 +36,30 @@ catalog.controller 'ShowController', [
       $scope.product = null
       flash.error = 'There is no product with ID ' + $stateParams.itemId
 ]
+
+catalog.controller 'EditController',[
+  '$scope',
+  'OneProduct',
+  'Product',
+  '$stateParams',
+  '$state',
+  ($scope, OneProduct, Product, $stateParams, $state) ->
+
+    product = OneProduct.get({itemId: $stateParams.itemId})
+
+    $scope.product= product
+    
+    $scope.editProduct = ->
+      if $scope.productForm.$valid
+        editedProduct = $scope.newProduct
+        product.name = editedProduct.name
+        product.description = editedProduct.description
+        product.price = editedProduct.price
+        Product.update product
+        $state.go 'index'
+        return
+]
+
 catalog.controller 'ProductsController', [
   '$scope'
   'Product'
@@ -59,6 +83,7 @@ catalog.controller 'ProductsController', [
 
     return
 ]
+
 catalog.config [
   '$stateProvider'
   '$urlRouterProvider'
@@ -75,9 +100,13 @@ catalog.config [
       controller: 'ProductsController').state('show',
       url: '/:itemId'
       templateUrl: 'show.html'
-      controller: 'ShowController').state 'new',
+      controller: 'ShowController').state('new',
       url: '/products/new'
       templateUrl: 'new.html'
-      controller: 'ProductsController'
+      controller: 'ProductsController').state('edit',
+      url: '/products/edit/:itemId'
+      templateUrl: 'edit.html'
+      controller: 'EditController'
+      )
     return
 ]
