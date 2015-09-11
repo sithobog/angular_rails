@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sass'
 
+gem 'slim'
+gem "slim-rails"
+
 gem 'responders', '~> 2.0'
 gem 'bower-rails'
 gem 'angular-rails-templates', '0.1.3'
