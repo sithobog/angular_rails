@@ -8,7 +8,7 @@ catalog = angular.module('catalog', [
 catalog.factory 'Product', [
   '$resource'
   ($resource) ->
-    $resource 'products/:id', { id: '@id' },
+    $resource '/api/products/:id', { id: '@id' },
       index:
         method: 'GET'
         isArray: true
@@ -21,7 +21,7 @@ catalog.factory 'Product', [
 catalog.factory 'OneProduct', [
   '$resource'
   ($resource) ->
-    $resource '/products/:itemId', id: '@id'
+    $resource '/api/products/:itemId', id: '@id'
 ]
 catalog.controller 'ShowController', [
   '$scope'

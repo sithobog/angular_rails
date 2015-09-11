@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :create, :destroy, :show, :update], defaults: {format: :json}
+	scope :api, defaults: {format: :json} do
+    resources :products, only: [:index, :create, :destroy, :show, :update]
+  end
   root to: "products#index"
 end
