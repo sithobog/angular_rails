@@ -1,11 +1,20 @@
-# angular_rails crud application
-Demo-app: https://nameless-oasis-9524.herokuapp.com/
-#### Setting up application
-1. `bundle install`
-2. `rake bower:install`
-3. `rake db:create && db:migrate`
-4. `rails s`
+== angular_rails crud application
 
-#### For integration test
-1. `rake db:migrate RAILS_ENV=test`
-2. `rspec` 
+Demo-app: https://nameless-oasis-9524.herokuapp.com/
+
+Setting up application
+
+* bundle install
+
+* rake bower:install
+
+* rake db:create && db:migrate
+
+* rails s
+
+
+== For integration test
+
+* rake db:migrate RAILS_ENV=test
+
+* rspec
