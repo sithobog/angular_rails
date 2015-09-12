@@ -13,7 +13,7 @@
     .row
       .col-sm-6.col-sm-offset-3
         br/
-        input.form-control name="price" ng-model="newProduct.price" placeholder=("Product price") required="" type="number" /
+        input.form-control#number name="price" ng-model="newProduct.price" placeholder=("Product price") required="" type="number" /
         div ng-show=("productForm.$submitted || productForm.price.$touched") style="color:red;" 
           span ng-show="productForm.price.$error.required"  Price is required
           span ng-show="productForm.price.$error.number" 
