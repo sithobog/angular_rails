@@ -1,3 +1,77 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.ng-invalid.ng-dirty{
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty{
+	border-color: #78FA89;
+}
+
+.btn.btn-success{
+	margin-left: 10px;
+}
+
+div p{
+	margin-left: 30px;
+	font-size: 16px;
+}
+
+.btn.btn-danger{
+	margin-left: 10px;
+}
+
+.row{
+	padding: 0 20px;
+}
+
+.panel p{
+	margin: 0 0;
+}
+
+.well.col-sm-3 a:not(.btn){
+	font-size: 20px;
+}
+
+article p{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+article .col-md-6{
+	font-size: 16px;
+	font-weight: bold;
+
+}
+
+.panel{
+	p{
+		margin: 0;
+	}
+	&.panel-heading{
+		margin-bottom: 0;
+	}
+	&.panel-body{
+		margin-bottom: 0;
+	}
+}
+
+.col-sm-3{
+	margin-top: 15px;
+}
+
+input[type="number"]{
+	width: 30%;
+}
+
+
+.panel.panel-heading{
+	margin-bottom: 0;
+}
+
+.panel.panel-primary{
+	
+}
