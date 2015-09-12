@@ -10,6 +10,8 @@ Setting up application
 
 * rake db:create && db:migrate
 
+* rake db:seed
+
 * rails s
 
 
