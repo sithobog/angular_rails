@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Api::ProductsController < Api::ApplicationController
 	respond_to :json
   def index
     respond_to do |format|
