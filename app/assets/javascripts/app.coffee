@@ -51,10 +51,6 @@ catalog.controller 'EditController',[
     
     $scope.editProduct = ->
       if $scope.productForm.$valid
-        editedProduct = $scope.newProduct
-        product.name = editedProduct.name
-        product.description = editedProduct.description
-        product.price = editedProduct.price
         Product.update product
         $state.go 'index'
         return
